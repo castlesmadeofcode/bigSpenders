@@ -121,9 +121,6 @@ let bigSpendersClub = [];
       });
 })
 
-const unique = (value, index, self) => {
-    return self.indexOf(value) === index
-  }
+const uniqueBigSpendersClub = [...new Set(bigSpendersClub)]
 
-  const uniqueBigSpendersClub = bigSpendersClub.filter(unique);
-  console.log(uniqueBigSpendersClub)
+console.log(uniqueBigSpendersClub);
