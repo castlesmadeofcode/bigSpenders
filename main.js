@@ -111,8 +111,19 @@ const businesses = [
     }
   ];
 
+let bigSpendersClub = [];
 
   const bigSpenders = businesses.filter(business => {
-      console.log(business);
-
+      business.orders.forEach(order => {
+          if (order > 9000) {
+              bigSpendersClub.push(business);
+          } 
+      });
 })
+
+const unique = (value, index, self) => {
+    return self.indexOf(value) === index
+  }
+
+  const uniqueBigSpendersClub = bigSpendersClub.filter(unique);
+  console.log(uniqueBigSpendersClub)
